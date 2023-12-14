@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import Table from "../components/Table";
@@ -7,6 +7,11 @@ import { FaChevronLeft } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 function Home() {
+  
+  // const HamburgerMenu=()=>{
+  //   const[sidebarOpen,setsidebarOpen]=useState(false)
+  // }
+
   return (
     <div>
       {/* navbar */}
@@ -14,7 +19,7 @@ function Home() {
 
       <div className="flex w-full">
         {/* sidebar */}
-        <div className="hidden:lg">
+        <div className="hidden lg:block">
           <Sidebar />
         </div>
 
@@ -28,13 +33,13 @@ function Home() {
               <p className="font-semibold">Task Flow</p>
             </div>
             <div className="flex gap-2 pr-6 border border-text-teal-600 p-2 rounded-lg">
-              <p className="font-semibold">Schedule Task</p>
+              <p className="font-semibold text-purple-500">Schedule Task</p>
               <FaArrowRightLong size={20} />
             </div>
           </div>
-          <div className="flex  ">
+          <div className="flex flex-col lg:flex-row ">
             {/* table */}
-            <div>
+            <div className="w-full">
               <Table />
             </div>
             {/* describe */}
